@@ -27,8 +27,8 @@ def main():
         case _:
             reminder = "Invalid priority level. Please enter high, medium, or low."
 
-    # Print the reminder
-    print(reminder)
+    # Print the reminder with "Reminder:" prefix
+    print(f"Reminder: {reminder}")
 
 if __name__ == "__main__":
     main()
