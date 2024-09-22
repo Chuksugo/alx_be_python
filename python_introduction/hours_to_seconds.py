@@ -1,8 +1,8 @@
 # Define the number of hours
 hours = 2
 
-# Calculate the number of seconds (1 hour = 60 minutes * 60 seconds)
-seconds = hours * 60 * 60
+# Calculate the number of seconds in the given hours
+seconds = hours * 3600  # 3600 seconds in 1 hour
 
-# Print the result with a clear message
+# Print the result in the desired format
 print(f"{hours} hour(s) is {seconds} seconds.")
