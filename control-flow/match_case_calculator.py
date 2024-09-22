@@ -1,12 +1,26 @@
-# Prompt the user to input the current weather
-weather = input("What's the weather like today? (sunny/rainy/cold): ").strip().lower()
+# Prompt for User Input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ").strip()
 
-# Provide clothing recommendations based on the weather input
-if weather == "sunny":
-    print("Wear a t-shirt and sunglasses.")
-elif weather == "rainy":
-    print("Don't forget your umbrella and a raincoat.")
-elif weather == "cold":
-    print("Make sure to wear a warm coat and a scarf.")
+# Perform the Calculation Using Match Case
+match operation:
+    case "+":
+        result = num1 + num2
+    case "-":
+        result = num1 - num2
+    case "*":
+        result = num1 * num2
+    case "/":
+        if num2 == 0:
+            result = "Cannot divide by zero."
+        else:
+            result = num1 / num2
+    case _:
+        result = "Invalid operation."
+
+# Output the Result
+if isinstance(result, str):
+    print(result)
 else:
-    print("Sorry, I don't have recommendations for this weather.")
+    print(f"The result is {result}.")
