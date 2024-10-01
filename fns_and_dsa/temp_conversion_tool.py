@@ -6,11 +6,11 @@ CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Conversion factor for Celsius to Fahrenh
 FAHRENHEIT_OFFSET = 32
 
 def convert_to_celsius(fahrenheit):
-    """Convert Fahrenheit to Celsius."""
+    """Convert Fahrenheit to Celsius using the global conversion factor."""
     return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    """Convert Celsius to Fahrenheit."""
+    """Convert Celsius to Fahrenheit using the global conversion factor."""
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
 
 def main():
@@ -35,7 +35,7 @@ def main():
                 print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")  # Invalid unit handling
 
         except ValueError:  # Handle non-numeric temperature input
-            print("Invalid temperature. Please enter a numeric value.")
+            print("Invalid temperature. Please enter a numeric value.")  # Error message for invalid input
 
 if __name__ == "__main__":
     main()  # Run the main function
