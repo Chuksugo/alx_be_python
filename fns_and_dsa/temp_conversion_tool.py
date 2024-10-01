@@ -14,10 +14,7 @@ def main():
     while True:
         try:
             # User Interaction: Prompt for temperature input
-            temperature = input("Enter the temperature to convert (or 'exit' to quit): ")
-            if temperature.lower() == 'exit':
-                print("Exiting the program. Goodbye!")
-                break  # Exit the loop if the user types 'exit'
+            temperature = input("Enter the temperature to convert: ")
 
             # Attempt to convert the input to a float
             temperature = float(temperature)
