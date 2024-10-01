@@ -1,30 +1,29 @@
-# Global conversion factors
+# Define Global Conversion Factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Conversion factor for Fahrenheit to Celsius
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Conversion factor for Celsius to Fahrenheit
 
-# Global offsets
-FAHRENHEIT_OFFSET = 32
-
 def convert_to_celsius(fahrenheit):
     """Convert Fahrenheit to Celsius using the global conversion factor."""
-    return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
     """Convert Celsius to Fahrenheit using the global conversion factor."""
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     while True:
         try:
-            # Prompt the user for a temperature
+            # User Interaction: Prompt for temperature input
             temperature = input("Enter the temperature to convert (or 'exit' to quit): ")
             if temperature.lower() == 'exit':
                 print("Exiting the program. Goodbye!")
                 break  # Exit the loop if the user types 'exit'
 
-            temperature = float(temperature)  # Convert input to float
+            # Attempt to convert the input to a float
+            temperature = float(temperature)
             unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()  # User input for unit
 
+            # Call the appropriate conversion function based on user input
             if unit == 'C':
                 converted_temp = convert_to_fahrenheit(temperature)  # Convert to Fahrenheit
                 print(f"{temperature}°C is {converted_temp:.2f}°F")  # Format to 2 decimal places
