@@ -12,11 +12,11 @@ def main():
     amount = float(params[0]) if params else None
 
     if command == "deposit" and amount is not None:
-        account.deposit(amount)  # Only the deposit method handles printing
+        account.deposit(amount)  # Only call deposit method
     elif command == "withdraw" and amount is not None:
-        account.withdraw(amount)  # Only the withdraw method handles printing
+        account.withdraw(amount)  # Only call withdraw method
     elif command == "display":
-        account.display_balance()  # Only the display_balance method handles printing
+        account.display_balance()  # Only call display_balance method
     else:
         print("Invalid command.")
 
